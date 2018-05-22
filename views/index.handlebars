@@ -1,0 +1,22 @@
+<h2 class="page-header">Home Page</h2>
+{{#if msg}}
+      <div class="alert alert-danger">{{msg}}</div>
+{{/if}}
+{{#if successmsg}}
+      <div class="alert alert-success">{{successmsg}}</div>
+{{/if}}
+<form method="post" action="/upload" enctype="multipart/form-data">
+  <div class="form-group">
+      <label for="imageUpload" class="form-control-file">Upload Image</label>
+      <input type="file" class="form-control-file" name="imageUpload" id="imageUpload">
+  </div>
+  <button class="btn btn-outline-secondary" type="submit">Upload</button>
+</form>
+<br>
+{{#if imgURL}}
+<div class="container">
+  <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+    <img src={{imgURL}} class="img-responsive">
+  </div>
+</div>
+{{/if}}

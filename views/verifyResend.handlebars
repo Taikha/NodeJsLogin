@@ -1,0 +1,23 @@
+<h2 class="page-header">Resend Confirmation Email</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+{{#if errmsg}}
+        <div class="alert alert-danger">{{errmsg}}</div> 
+{{/if}}
+{{#if successmsg}}
+        <div class="alert alert-success">{{successmsg}}</div> 
+{{/if}}
+<form method="post" action="/users/verifyResend">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default">Resend Email</button>
+</form>
